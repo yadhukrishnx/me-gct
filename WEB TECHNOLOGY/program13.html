@@ -1,0 +1,31 @@
+<html>
+<body>
+<script language="javascript"> 
+function calcPrimes()
+{
+var a=document.prime.low.value; 
+var b=document.prime.up.value; var n;
+var i; 
+for(n=a;n<=b;n++)
+ {
+for(i=2;i<n;i++)
+ {
+if(n%i==0)
+ {
+break;
+ }
+}
+if(i==n)
+ {
+document.write("<br>"+n)
+ }
+}
+}
+</script>
+<form name="prime">
+Lower limit: <input type="text" name="low" /> 
+Upper limit: <input type="text" name="up" />
+<input type="button" value="Find Prime Numbers" onclick="calcPrimes()" >
+</form>
+</body>
+</html>

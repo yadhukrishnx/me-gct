@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Program10 : Arrays </title>
+    </head>
+<body>
+<script type="text/javascript">
+a= new Array("1","2","3");
+b=new Array("apple","orange","grape","jackfruit"); 
+c= new Array(1,2,3);
+document.writeln("Array lengths:");
+document.writeln("<br>length of array a is: "+a.length); 
+document.writeln("<br>length of array b is: "+b.length);
+document.writeln("<br>length of array c is: "+c.length); 
+document.writeln("<br>Array elements:<br>");
+document.writeln("Elements Of the array a:");
+for(i=0;i< a.length;i++)
+{
+document.writeln(a[i]);
+}
+document.writeln("<br>Elements Of the array b:"); 
+for(i=0;i< b.length;i++)
+{
+document.writeln(b[i]);
+}
+document.writeln("<br>Elements Of the array c:"); 
+for(i=0;i< c.length;i++)
+{
+document.writeln(c[i]);
+}
+document.writeln("<br><br><b>****ARRAY OPERATIONS:*****</b><br>"); 
+b.sort();
+document.writeln("Array b after sorting:"); 
+for(i=0;i< b.length;i++)
+{
+document.writeln(b[i]);
+}
+a.reverse();
+document.writeln("<br> Array a in reverse order:");
+for(i=0;i< a.length;i++)
+{
+23
+document.writeln(a[i]);
+}
+d= new Array();
+d=a.concat(b);
+document.writeln("<br> Arrays a and b after conatenation:");
+for(i=0;i< d.length;i++)
+{
+document.writeln(d[i]);
+}
+document.writeln("<br>Array a after join operation:"); 
+var e=a.join();
+document.write(e); 
+document.writeln("<br>"); 
+var f=a.join('?'); 
+document.write(f);
+document.writeln("<br>subarray after slicing:");
+var g=a.slice(0,2);
+document.write(g);
+</script>
+</body>
+</html>

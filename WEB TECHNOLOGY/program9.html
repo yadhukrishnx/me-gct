@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>program9 - Email registration form</title>
+        <script>
+            function validateform(){
+                //Getting values
+                var myname=document.myform.myname.value;
+                var mailid=document.myform.mailid.value;
+                var crpassword=document.myform.crpassword.value;
+                var cnpassword=document.myform.cnpassword.value;
+                var mobile=document.myform.mobile.value;
+                //If null check
+                if(myname==null || myname==""){
+                    alert("Name can't be blank");
+                    document.myform.myname.focus();
+                    return false;
+                }
+                else if(mailid==null || mailid==""){
+                    alert("Mail id cant be blank")
+                    return false;
+                }
+                else{
+                    atpos = mailid.indexOf("@");
+                    dotpos=mailid.lastIndexOf(".");
+                    if(atpos < 1 || (dotpos - atpos < 2)){
+                        alert("Please enter correct email ID");
+                        return false;
+                    }
+                }
+
+                if(crpassword==null || cnpassword==""){
+                    alert("Password cannot be empty");
+                    document.myform.crpassword.focus();
+                    document.myform.cnpassword.focus();
+                    return false;
+                }
+                else if(crpassword!=cnpassword){
+                    alert("password must be same !");
+                    return false;
+                    document.myform.cnpassword.focus();
+                }
+                if(mobile==null || mobile==""){
+                    alert("Mobile number can't be blank");
+                    return false;
+                }
+                else if( isNaN(mobile)){
+                    alert("Enter Numberic value only");
+                    return false;
+                }
+                else if(mobile.length!=10){
+                    alert("Mobile number must be 10 digits");
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <center>
+        <table border="1">
+            <tr align="center">
+                <td align="center"><h3>Email Registration Form</h3></td>
+            </tr>
+            <form action="program6-home.html" target="a" name="myform" method="post" onsubmit="return validateform()">
+            <tr>
+                <td align="center">Name : <input type="text" name="myname"> <br> </td>
+            </tr>
+            <tr>
+                <td align="center" >Email Address : <input type="text" name="mailid" > <br> </td>
+            </tr>
+            <tr>
+                <td align="center">Create a Password : <input type="password" name="crpassword" > <br> </td>
+            </tr>
+            <tr>
+                <td align="center">Confirm Password : <input type="password" name="cnpassword"> </td>
+            </tr>
+            <tr>
+                <td align="center">Mobile Number : <input type="text" name="mobile" ><br></td>
+            </tr>
+            <tr>
+                <td align="center"><input type="submit" value="Register"></td>
+            </tr>
+            </form>
+            
+        </table>
+    </center>
+    </body>
+</html>

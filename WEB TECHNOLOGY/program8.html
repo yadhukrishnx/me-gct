@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>program8 - Form validation</title>
+        <script lang="javascript">
+            function validateform(){
+                var name=document.myform.name.value;
+                var password=document.myform.password.value;
+                if(name==null || name==""){
+                    alert("Name cant be blank");
+                    return false;
+                }
+                else if(password==null || password==""){
+                    alert("Password cant be blank");
+                    return false;
+                }
+                else if(password.length<6){
+                    alert("Password Must be atleast 6 cahracters long");
+                    return false;
+    
+                }
+            }
+            
+        </script>
+    </head>
+    <body>
+       <table border="2">
+        <tr align="center">
+            <td><h3>Login Details</h3></td>
+        </tr>
+        <form action="program1.html" name="myform" method="post" onsubmit="return validateform()">
+        <tr align="center">
+            <td>Name : <input type="text" name="name" > <br> </td>
+        </tr>
+        <tr align="center">
+            <td> Password <input type="password" name="password"><br></td>
+        </tr>
+        <tr align="center">
+            <td><input type="submit" value="login"></td>
+        </tr>
+        </form>
+       </table>
+    </body>
+</html>
